@@ -1,28 +1,27 @@
 using System.Net;
 using System.Text.Json;
-using Api.Function;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Http;
+
+
 using Microsoft.Extensions.Logging;
 
-namespace Company.Function
+namespace Api.Function;
+
+public class GetVisitorCounter
 {
-    public class GetVistorsCounter
+    private readonly ILogger _logger;
+
+    public GetVisitorCounter(ILogger<GetVisitorCounter> logger)
     {
-        private readonly ILogger _logger;
+        _logger = logger;
+    }
 
-        public GetVistorsCounter(ILoggerFactory loggerFactory)
-        {
-            _logger = loggerFactory.CreateLogger<GetVistorsCounter>();
-        }
-
-        [Function("GetVistorsCounter")]
-        public async Task<UpdatedCounter> Run([HttpTrigger(AuthorizationLevel.Function, "get", "post")] HttpRequestData req,
-        
-        [CosmosDBInput("satish-resume","Counter", Connection = "CosmosDbConnectionString", Id = "1", PartitionKey = "1")] Counter counter)
-        
-        {
-
+    [Function("GetVisitorCounter")]
+    public async Task<UpdatedCounter> Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", "post")] HttpRequestData req,
+    [CosmosDBInput("satish-resume","Counter", Connection = "CosmosDbConnectionString", Id = "1", PartitionKey = "1")] Counter counter)
+    
+    {
         var response = req.CreateResponse(HttpStatusCode.OK);
         response.Headers.Add("Content-Type", "application/json; charset=utf-8");
         string jsonString = JsonSerializer.Serialize(counter);
@@ -33,6 +32,5 @@ namespace Company.Function
             NewCounter = counter,
             HttpResponse = response
         };
-    }
     }
 }

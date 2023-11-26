@@ -2,10 +2,10 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "C#: <project-name> Debug",
+            "name": "C#: api.csproj Debug",
             "type": "dotnet",
             "request": "launch",
-            "projectPath": "${workspaceFolder}/<relative-path-to-project-folder><project-name>.csproj"
+            "projectPath": "${workspaceFolder}/api/api.csproj"
         },
         {
             "name": "Attach to .NET Functions",
