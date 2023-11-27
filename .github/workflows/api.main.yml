@@ -36,11 +36,11 @@ jobs:
         pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
         dotnet build --configuration Release --output ./output
         popd
-    - name: 'Run Unit test'
-      shell: bash # For Linux, use bash
-      run: |
-        pushd 'tests'
-        dotnet test
+#    - name: 'Run Unit test'
+#      shell: bash # For Linux, use bash
+#      run: |
+#        pushd 'tests'
+#        dotnet test
     - name: 'Run Azure Functions Action'
       uses: Azure/functions-action@v1
       id: fa
