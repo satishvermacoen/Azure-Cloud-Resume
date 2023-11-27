@@ -39,7 +39,7 @@ jobs:
     - name: 'Run Unit test'
       shell: bash # For Linux, use bash
       run: |
-        pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}../test'
+        pushd './test'
         dotnet test
     - name: 'Run Azure Functions Action'
       uses: Azure/functions-action@v1
