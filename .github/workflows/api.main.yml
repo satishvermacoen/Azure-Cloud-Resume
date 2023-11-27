@@ -39,7 +39,7 @@ jobs:
     - name: 'Run Unit test'
       shell: bash # For Linux, use bash
       run: |
-        pushd './test'
+        pushd 'tests'
         dotnet test
     - name: 'Run Azure Functions Action'
       uses: Azure/functions-action@v1
