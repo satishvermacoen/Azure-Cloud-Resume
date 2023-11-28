@@ -8,21 +8,7 @@ If you'd like to build your own, here is the YouTube video [video](https://youtu
 
 ## Demo
 
-[View it live here(https://www.satishverma.cloud/)
-
-## Pre-requisites
-
-I leverage [Dev Containers](https://code.visualstudio.com/docs/remote/containers) for my development environment. If you'd like to use it, you'll need to install [Docker](https://www.docker.com/products/docker-desktop) and the [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) for VS Code.
-
-Once installed:
-
-1. Make sure Docker is running.
-2. Open the project in VS Code.
-3. Ctrl/Cmd + Shift + P to open the command palette.
-4. Type "Reopen in Container" and select:
-    - [`.NET API`](.devcontainer/api/devcontainer.json) container is for working with Azure Functions backend.
-    - [`JS Frontend`](.devcontainer/frontend/devcontainer.json) container is for working with the frontend.
-5. VS Code will reload and you'll be in the container.
+View it live here(https://www.satishverma.cloud/)
 
 ## Structure
 
@@ -31,8 +17,69 @@ Once installed:
 - `api/`: Folder contains the dotnet API deployed on Azure Functions.
     - `Counter.cs`: Contains the visitor counter code.
 - `.github/workflows/`: Folder contains CI/CD workflow configurations.
-- `.devcontainer`: Folder contains the my container configuration for VS Code.
 
+EVERYTHING IS PRE-CONFIGURED-GIT REPO.
+## Resume hostimg on Azure Cloud Resources.
+In this Project, Deploying a Resumes in the form of Websites and for hosting, using Azure Cloud Resources.
+### Azure Resource Created
+
+1. Azure Function app 
+2. Azure CosmosDB
+3. Azure Stoarge Account(Static website hosting)
+4. Azure Front Door and CDN
+5. [WWW.SATISHVERMA.CLOUD](htttp://www.satishverma.cloud)
+
+## Process
+
+### Cloud init.txt
+
+1. Modify and save the website template according to Resume. Use link to clone the repo
+
+```bash
+#  Original Git Repo of Resume.
+
+ git clone https://github.com/madebygps/azure-resume.git
+
+```
+
+```bash
+# My Git Repo of Resume.
+
+ git clone https://github.com/satishvermacoen/Azure-Cloud-Resume.git
+
+```
+
+2. Create and configure azure resource.
+-----------------
+- Azure CosmosDB
+- Azure Function app 
+- Azure Stoarge Account(Static website hosting)
+-----------------
+### Azure CosmosDB
+
+![App Screenshot](/img/6.png)
+
+### Azure Function app
+
+![App Screenshot](/img/3.png)
+
+### Azure Stoarge Account(Static website hosting)
+
+![App Screenshot](/img/1.png)
+![App Screenshot](/img/2.png)
+
+3. Azure CDN Configuration for Domain forwarding .
+
+![App Screenshot](/img/7.png)
+![App Screenshot](/img/5.png)
+
+4. Some minnor changes check out [video](https://www.youtube.com/watch?v=ieYrBWmkfno&t=4041s) for it 
+
+## IT'S LIVE-[WWW.SATISHVERMA.CLOUD](htttp://www.satishverma.cloud)
+
+## Done for this.
+-----------------------------------
+Refercence
 ## Frontend resources
 
 The front-end is a static site with HTML, CSS, and JavaScript. It's static and has a visitor counter. The visitor counter data fetched via an API call to an Azure Function.
